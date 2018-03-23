@@ -15,6 +15,9 @@ class RestaurantTableViewController: UITableViewController {
     var restaurantLocations = ["Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Hong Kong", "Sydney", "Sydney", "Sydney", "New York", "New York", "New York", "New York", "New York", "New York", "New York", "London", "London", "London", "London"]
     var restaurantTypes = ["Coffee & Tea Shop", "Cafe", "Tea House", "Austrian / Causual Drink", "French", "Bakery", "Bakery", "Chocolate", "Cafe", "American / Seafood", "American", "American", "Breakfast & Brunch", "Coffee & Tea", "Coffee & Tea", "Latin American", "Spanish", "Spanish", "Spanish", "British", "Thai"]
 
+    //宣告21個false用來記錄是否有勾選
+    var restaurantIsVisited = Array(repeating: false, count: 21)
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,6 +60,9 @@ class RestaurantTableViewController: UITableViewController {
         cell.thumbnailImageView.layer.cornerRadius = 30.0
         cell.thumbnailImageView.clipsToBounds = true
 
+        //這裡也要加 不然拖曳 會標到別列
+        cell.accessoryType = restaurantIsVisited[indexPath.row] ? .checkmark :.none
+
         return cell
     }
 
@@ -66,7 +72,7 @@ class RestaurantTableViewController: UITableViewController {
         //super.tableView(tableView, didSelectRowAt: indexPath)
         //彈出視窗
         let optionMenu = UIAlertController(
-                title:nil, //可以加字串
+                title: nil, //可以加字串
                 message: "What do you want to do?",
                 preferredStyle: .alert) //UIAlertControllerStyle.actionSheet一樣的 也可以.alert
         //alert是Modal 且視窗出現在中間
@@ -81,24 +87,32 @@ class RestaurantTableViewController: UITableViewController {
     private func addCheckAction(tableView: UITableView, indexPath: IndexPath, optionMenu: UIAlertController) {
         let checkAction = UIAlertAction(title: "Check in", style: .default, handler:
         {
-            (action:UIAlertAction!) -> Void in
+            (action: UIAlertAction!) -> Void in
             let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = .checkmark
+
+            //原本有勾選的取消 沒有就勾選
+            if self.restaurantIsVisited[indexPath.row]{
+                cell?.accessoryType = .none
+                self.restaurantIsVisited[indexPath.row] = false
+            }else {
+                cell?.accessoryType = .checkmark
+                self.restaurantIsVisited[indexPath.row] = true
+            }
         })
         optionMenu.addAction(checkAction)
     }
 
     private func addCancelAction(indexPath: IndexPath, optionMenu: UIAlertController) {
-        let callActionHandler = { (action:UIAlertAction!) -> Void in
+        let callActionHandler = { (action: UIAlertAction!) -> Void in
             let alertMessage = UIAlertController(title: "Service Unavailable", message:
-            "Sorry, the call feature is not available yet. Please retry later.",preferredStyle: .alert)
+            "Sorry, the call feature is not available yet. Please retry later.", preferredStyle: .alert)
             alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alertMessage, animated: true, completion: nil)
         }
 
         let cancelAction = UIAlertAction(
-                title:"Call"+"123-000-\(indexPath.row)", //"Cancel"
-                style: .cancel,//.cancel或default或destruct(title:"Cancel" 變紅字)
+                title: "Call" + "123-000-\(indexPath.row)", //"Cancel"
+                style: .cancel, //.cancel或default或destruct(title:"Cancel" 變紅字)
                 handler: callActionHandler)
         optionMenu.addAction(cancelAction)
     }
