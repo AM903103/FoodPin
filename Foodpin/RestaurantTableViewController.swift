@@ -72,10 +72,17 @@ class RestaurantTableViewController: UITableViewController {
         //alert是Modal 且視窗出現在中間
         //actionSheet 可以點外面就取消 視窗出現在最底部
 
+        let callActionHandler = { (action:UIAlertAction!) -> Void in
+            let alertMessage = UIAlertController(title: "Service Unavailable", message:
+            "Sorry, the call feature is not available yet. Please retry later.",preferredStyle: .alert)
+            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alertMessage, animated: true, completion: nil)
+        }
+
         let cancelAction = UIAlertAction(
-                title:"Cancel",
+                title:"Call"+"123-000-\(indexPath.row)", //"Cancel"
                 style: .cancel,//.cancel或default或destruct(title:"Cancel" 變紅字)
-                handler: nil)
+                handler: callActionHandler)
         optionMenu.addAction(cancelAction)
         present(optionMenu, animated: true, completion: nil)
     }
