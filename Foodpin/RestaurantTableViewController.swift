@@ -127,17 +127,30 @@ class RestaurantTableViewController: UITableViewController {
     }
     */
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            //tableView.deleteRows(at: [indexPath], with: .fade)
+            restaurantNames.remove(at: indexPath.row)
+            restaurantLocations.remove(at: indexPath.row)
+            restaurantTypes.remove(at: indexPath.row)
+            restaurantIsVisited.remove(at: indexPath.row)
+            restaurantImages.remove(at: indexPath.row)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
+
+        // comfirm the item was deleted
+        print("Total item: \(restaurantNames.count)")
+        for item in restaurantNames {
+            print(item)
+        }
+
+        //為了讓UI更新 不然有刪資料使用者看不出來
+        tableView.reloadData()
     }
-    */
+
 
     /*
     // Override to support rearranging the table view.
