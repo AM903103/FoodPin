@@ -61,7 +61,7 @@ class RestaurantTableViewController: UITableViewController {
         cell.thumbnailImageView.clipsToBounds = true
 
         //這裡也要加 不然拖曳 會標到別列
-        cell.accessoryType = restaurantIsVisited[indexPath.row] ? .checkmark :.none
+        cell.accessoryType = restaurantIsVisited[indexPath.row] ? .checkmark : .none
 
         return cell
     }
@@ -85,16 +85,18 @@ class RestaurantTableViewController: UITableViewController {
     }
 
     private func addCheckAction(tableView: UITableView, indexPath: IndexPath, optionMenu: UIAlertController) {
-        let checkAction = UIAlertAction(title: "Check in", style: .default, handler:
+        let title = self.restaurantIsVisited[indexPath.row] ? "Undo check in" : "Check in"
+
+        let checkAction = UIAlertAction(title: title, style: .default, handler:
         {
             (action: UIAlertAction!) -> Void in
             let cell = tableView.cellForRow(at: indexPath)
 
             //原本有勾選的取消 沒有就勾選
-            if self.restaurantIsVisited[indexPath.row]{
+            if self.restaurantIsVisited[indexPath.row] {
                 cell?.accessoryType = .none
                 self.restaurantIsVisited[indexPath.row] = false
-            }else {
+            } else {
                 cell?.accessoryType = .checkmark
                 self.restaurantIsVisited[indexPath.row] = true
             }
