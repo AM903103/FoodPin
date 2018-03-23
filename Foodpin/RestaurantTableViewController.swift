@@ -68,21 +68,21 @@ class RestaurantTableViewController: UITableViewController {
 
     //直接在appcode裡直接打didselect
     //被點選後的事件
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //super.tableView(tableView, didSelectRowAt: indexPath)
-        //彈出視窗
-        let optionMenu = UIAlertController(
-                title: nil, //可以加字串
-                message: "What do you want to do?",
-                preferredStyle: .alert) //UIAlertControllerStyle.actionSheet一樣的 也可以.alert
-        //alert是Modal 且視窗出現在中間
-        //actionSheet 可以點外面就取消 視窗出現在最底部
-
-        addCancelAction(indexPath: indexPath, optionMenu: optionMenu)
-        addCheckAction(tableView: tableView, indexPath: indexPath, optionMenu: optionMenu)
-        present(optionMenu, animated: true, completion: nil)
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        //super.tableView(tableView, didSelectRowAt: indexPath)
+//        //彈出視窗
+//        let optionMenu = UIAlertController(
+//                title: nil, //可以加字串
+//                message: "What do you want to do?",
+//                preferredStyle: .alert) //UIAlertControllerStyle.actionSheet一樣的 也可以.alert
+//        //alert是Modal 且視窗出現在中間
+//        //actionSheet 可以點外面就取消 視窗出現在最底部
+//
+//        addCancelAction(indexPath: indexPath, optionMenu: optionMenu)
+//        addCheckAction(tableView: tableView, indexPath: indexPath, optionMenu: optionMenu)
+//        present(optionMenu, animated: true, completion: nil)
+//        tableView.deselectRow(at: indexPath, animated: false)
+//    }
 
     private func addCheckAction(tableView: UITableView, indexPath: IndexPath, optionMenu: UIAlertController) {
         let title = self.restaurantIsVisited[indexPath.row] ? "Undo check in" : "Check in"
