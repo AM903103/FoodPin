@@ -156,7 +156,22 @@ class RestaurantTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        //Share Button
+        let shareAction = addShareAction()
+        let deleteAction = addDeleteAction()
+
+        //注意順序:index越小的在UI的越右邊
+        return [deleteAction,shareAction]
+    }
+
+    private func addDeleteAction() -> UITableViewRowAction { //Delete Button
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete",
+                handler: { (action, indexPath) -> Void in
+                    self.deleteRow(indexPath: indexPath)
+                })
+        return deleteAction
+    }
+
+    private func addShareAction() -> UITableViewRowAction { //Share Button
         let shareAction = UITableViewRowAction(style: .default, title: "Share",
                 handler: { (action, indexPath) -> Void in
                     let defaultText = "Just checking in at " + self.restaurantNames[indexPath.row]
@@ -165,14 +180,8 @@ class RestaurantTableViewController: UITableViewController {
                     self.present(activityController, animated: true, completion: nil)
                 })
 
-        //Delete Button
-        let deleteAction = UITableViewRowAction(style: .default, title: "Delete",
-                handler: { (action, indexPath) -> Void in
-                    self.deleteRow(indexPath: indexPath)
-                })
-
-        //注意順序:index越小的在UI的越右邊
-        return [deleteAction,shareAction]
+        shareAction.backgroundColor = UIColor(red: 48/255, green: 173/255, blue: 203/255,alpha: 1.0)
+        return shareAction
     }
 
     /*
