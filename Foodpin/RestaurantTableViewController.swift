@@ -72,6 +72,23 @@ class RestaurantTableViewController: UITableViewController {
         //alert是Modal 且視窗出現在中間
         //actionSheet 可以點外面就取消 視窗出現在最底部
 
+        addCancelAction(indexPath: indexPath, optionMenu: optionMenu)
+        addCheckAction(tableView: tableView, indexPath: indexPath, optionMenu: optionMenu)
+        present(optionMenu, animated: true, completion: nil)
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+
+    private func addCheckAction(tableView: UITableView, indexPath: IndexPath, optionMenu: UIAlertController) {
+        let checkAction = UIAlertAction(title: "Check in", style: .default, handler:
+        {
+            (action:UIAlertAction!) -> Void in
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.accessoryType = .checkmark
+        })
+        optionMenu.addAction(checkAction)
+    }
+
+    private func addCancelAction(indexPath: IndexPath, optionMenu: UIAlertController) {
         let callActionHandler = { (action:UIAlertAction!) -> Void in
             let alertMessage = UIAlertController(title: "Service Unavailable", message:
             "Sorry, the call feature is not available yet. Please retry later.",preferredStyle: .alert)
@@ -84,18 +101,6 @@ class RestaurantTableViewController: UITableViewController {
                 style: .cancel,//.cancel或default或destruct(title:"Cancel" 變紅字)
                 handler: callActionHandler)
         optionMenu.addAction(cancelAction)
-
-        let checkAction = UIAlertAction(title: "Check in", style: .default, handler:
-        {
-            (action:UIAlertAction!) -> Void in
-            let cell = tableView.cellForRow(at: indexPath)
-            cell?.accessoryType = .checkmark
-        })
-        optionMenu.addAction(checkAction)
-
-        present(optionMenu, animated: true, completion: nil)
-
-        tableView.deselectRow(at: indexPath, animated: false)
     }
 
     /*
