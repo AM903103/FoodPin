@@ -129,15 +129,11 @@ class RestaurantTableViewController: UITableViewController {
 
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        print("Total item: \(restaurantNames.count)")
         if editingStyle == .delete {
             // Delete the row from the data source
-            restaurantNames.remove(at: indexPath.row)
-            restaurantLocations.remove(at: indexPath.row)
-            restaurantTypes.remove(at: indexPath.row)
-            restaurantIsVisited.remove(at: indexPath.row)
-            restaurantImages.remove(at: indexPath.row)
-            //從tableView移除特定列(或多列)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            deleteRow(indexPath: indexPath)
+
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
@@ -149,6 +145,35 @@ class RestaurantTableViewController: UITableViewController {
         }
     }
 
+    private func deleteRow(indexPath: IndexPath) {
+        restaurantNames.remove(at: indexPath.row)
+        restaurantLocations.remove(at: indexPath.row)
+        restaurantTypes.remove(at: indexPath.row)
+        restaurantIsVisited.remove(at: indexPath.row)
+        restaurantImages.remove(at: indexPath.row)
+        //從tableView移除特定列(或多列)
+        tableView.deleteRows(at: [indexPath], with: .fade)
+    }
+
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        //Share Button
+        let shareAction = UITableViewRowAction(style: .default, title: "Share",
+                handler: { (action, indexPath) -> Void in
+                    let defaultText = "Just checking in at " + self.restaurantNames[indexPath.row]
+                    let activityController =
+                            UIActivityViewController(activityItems: [defaultText], applicationActivities: nil)
+                    self.present(activityController, animated: true, completion: nil)
+                })
+
+        //Delete Button
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete",
+                handler: { (action, indexPath) -> Void in
+                    self.deleteRow(indexPath: indexPath)
+                })
+
+        //注意順序:index越小的在UI的越右邊
+        return [deleteAction,shareAction]
+    }
 
     /*
     // Override to support rearranging the table view.
