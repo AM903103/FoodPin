@@ -84,6 +84,15 @@ class RestaurantTableViewController: UITableViewController {
                 style: .cancel,//.cancel或default或destruct(title:"Cancel" 變紅字)
                 handler: callActionHandler)
         optionMenu.addAction(cancelAction)
+
+        let checkAction = UIAlertAction(title: "Check in", style: .default, handler:
+        {
+            (action:UIAlertAction!) -> Void in
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.accessoryType = .checkmark
+        })
+        optionMenu.addAction(checkAction)
+
         present(optionMenu, animated: true, completion: nil)
     }
 
