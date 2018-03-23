@@ -131,12 +131,13 @@ class RestaurantTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            //tableView.deleteRows(at: [indexPath], with: .fade)
             restaurantNames.remove(at: indexPath.row)
             restaurantLocations.remove(at: indexPath.row)
             restaurantTypes.remove(at: indexPath.row)
             restaurantIsVisited.remove(at: indexPath.row)
             restaurantImages.remove(at: indexPath.row)
+            //從tableView移除特定列(或多列)
+            tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
@@ -146,9 +147,6 @@ class RestaurantTableViewController: UITableViewController {
         for item in restaurantNames {
             print(item)
         }
-
-        //為了讓UI更新 不然有刪資料使用者看不出來
-        tableView.reloadData()
     }
 
 
