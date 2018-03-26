@@ -47,6 +47,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //標題顯示餐廳名稱
+        title = restaurant.name
+
         // Do any additional setup after loading the view.
         restaurantImageView.image = UIImage(named: restaurant.image)
         //設定表格背景色
