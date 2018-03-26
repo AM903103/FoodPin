@@ -163,6 +163,7 @@
                     </view>
                     <connections>
                         <outlet property="restaurantImageView" destination="s7y-ky-6cf" id="yW9-lc-5zN"/>
+                        <outlet property="tableview" destination="8YC-Cn-TMk" id="BoY-Qy-BDJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ra-nX-Nuo" userLabel="First Responder" sceneMemberID="firstResponder"/>

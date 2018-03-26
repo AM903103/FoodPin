@@ -13,7 +13,8 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
 
     @IBOutlet weak var restaurantImageView: UIImageView!
 
-
+    @IBOutlet weak var tableview: UITableView!
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4;
     }
@@ -38,16 +39,22 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.valueLabel.text = ""
         }
 
+        //cell變透明
+        cell.backgroundColor = UIColor.clear
+
         return cell
     }
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         restaurantImageView.image = UIImage(named: restaurant.image)
-
+        //設定表格背景色
+        tableview.backgroundColor = UIColor(red: 0/255, green: 240/255, blue: 240/255, alpha: 0.2)
+        //移除空白列的分隔線
+        tableview.tableFooterView = UIView(frame: CGRect.zero)
+        //變更分隔線顏色
+        tableview.separatorColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 0.8)
     }
 
     override func didReceiveMemoryWarning() {
