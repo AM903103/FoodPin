@@ -17,6 +17,8 @@
 		18DA853E2063C80100E53751 /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA853D2063C80100E53751 /* RestaurantTableViewController.swift */; };
 		18DA85402063D05600E53751 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA853F2063D05600E53751 /* RestaurantTableViewCell.swift */; };
 		18DA8542206888EE00E53751 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA8541206888ED00E53751 /* RestaurantDetailViewController.swift */; };
+		18DA85442068C22400E53751 /* RestaurantDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA85432068C22300E53751 /* RestaurantDetailTableViewCell.swift */; };
+		18DA85462068CDB700E53751 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA85452068CDB700E53751 /* Restaurant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		18DA853D2063C80100E53751 /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		18DA853F2063D05600E53751 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		18DA8541206888ED00E53751 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		18DA85432068C22300E53751 /* RestaurantDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewCell.swift; sourceTree = "<group>"; };
+		18DA85452068CDB700E53751 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				18DA853D2063C80100E53751 /* RestaurantTableViewController.swift */,
 				18DA853F2063D05600E53751 /* RestaurantTableViewCell.swift */,
 				18DA8541206888ED00E53751 /* RestaurantDetailViewController.swift */,
+				18DA85432068C22300E53751 /* RestaurantDetailTableViewCell.swift */,
+				18DA85452068CDB700E53751 /* Restaurant.swift */,
 			);
 			path = Foodpin;
 			sourceTree = "<group>";
@@ -270,7 +276,9 @@
 			files = (
 				18DA85402063D05600E53751 /* RestaurantTableViewCell.swift in Sources */,
 				18DA85152063B37F00E53751 /* Foodpin.xcdatamodeld in Sources */,
+				18DA85462068CDB700E53751 /* Restaurant.swift in Sources */,
 				18DA8542206888EE00E53751 /* RestaurantDetailViewController.swift in Sources */,
+				18DA85442068C22400E53751 /* RestaurantDetailTableViewCell.swift in Sources */,
 				18DA850D2063B37F00E53751 /* AppDelegate.swift in Sources */,
 				18DA853E2063C80100E53751 /* RestaurantTableViewController.swift in Sources */,
 			);
