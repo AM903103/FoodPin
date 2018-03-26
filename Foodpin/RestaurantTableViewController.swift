@@ -160,7 +160,7 @@ class RestaurantTableViewController: UITableViewController {
         let deleteAction = addDeleteAction()
 
         //注意順序:index越小的在UI的越右邊
-        return [deleteAction,shareAction]
+        return [deleteAction, shareAction]
     }
 
     private func addDeleteAction() -> UITableViewRowAction { //Delete Button
@@ -180,7 +180,7 @@ class RestaurantTableViewController: UITableViewController {
                     self.present(activityController, animated: true, completion: nil)
                 })
 
-        shareAction.backgroundColor = UIColor(red: 48/255, green: 173/255, blue: 203/255,alpha: 1.0)
+        shareAction.backgroundColor = UIColor(red: 48 / 255, green: 173 / 255, blue: 203 / 255, alpha: 1.0)
         return shareAction
     }
 
@@ -199,14 +199,17 @@ class RestaurantTableViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "showRestaurantDetail") {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationControllor = segue.destination as! RestaurantDetailViewController
+                destinationControllor.restaurantImage = restaurantImages[indexPath.row]
+            }
+        }
     }
-    */
 
 }

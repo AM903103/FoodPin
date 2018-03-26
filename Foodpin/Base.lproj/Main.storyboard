@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gCX-Xb-aIQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QJk-R5-suu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -74,7 +74,7 @@
                                     <outlet property="nameLabel" destination="ztZ-sA-OUm" id="FnL-og-IpY"/>
                                     <outlet property="thumbnailImageView" destination="40k-pW-GMx" id="BWr-cx-GtS"/>
                                     <outlet property="typeLabel" destination="A9G-D0-3Pc" id="vTs-l8-1wI"/>
-                                    <segue destination="KFG-hZ-tQq" kind="show" id="rLR-8z-iLQ"/>
+                                    <segue destination="KFG-hZ-tQq" kind="show" identifier="showRestaurantDetail" id="Qiv-tk-ssk"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -87,12 +87,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFQ-vz-kpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="196" y="42.728635682158924"/>
+            <point key="canvasLocation" x="982" y="43"/>
         </scene>
-        <!--View Controller-->
+        <!--Restaurant Detail View Controller-->
         <scene sceneID="y1V-Ld-8EG">
             <objects>
-                <viewController id="KFG-hZ-tQq" sceneMemberID="viewController">
+                <viewController id="KFG-hZ-tQq" customClass="RestaurantDetailViewController" customModule="Foodpin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OFN-hu-Hdc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,28 +110,32 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zDj-4M-dfc"/>
                     </view>
+                    <connections>
+                        <outlet property="restaurantImageView" destination="w8j-I6-GCX" id="6FJ-Zc-HOs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ra-nX-Nuo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="994" y="36"/>
+            <point key="canvasLocation" x="1769" y="42"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="SFs-aw-5SH">
+        <scene sceneID="ZMy-uU-TK5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gCX-Xb-aIQ" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QJk-R5-suu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="AF9-pq-VOu">
+                    <navigationItem key="navigationItem" id="emL-x9-HJZ"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Bpi-Az-27V">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="uZL-Nf-KFp" kind="relationship" relationship="rootViewController" id="kR0-s1-ryP"/>
+                        <segue destination="uZL-Nf-KFp" kind="relationship" relationship="rootViewController" id="E7K-3I-SiI"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sH3-DG-wj9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Zd-Go-nve" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-578" y="43"/>
+            <point key="canvasLocation" x="195.19999999999999" y="42.278860569715143"/>
         </scene>
     </scenes>
 </document>
