@@ -16,7 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        //變更狀態列外觀
+        UIApplication.shared.statusBarStyle = .lightContent
         //改導覽列背景色
         UINavigationBar.appearance().barTintColor = UIColor(red: 216 / 255, green: 74 / 255, blue: 32 / 255, alpha: 1)
         //改到導覽列的 導覽項目跟按鈕項目顏色
