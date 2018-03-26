@@ -16,6 +16,7 @@
 		18DA85302063B37F00E53751 /* FoodpinUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA852F2063B37F00E53751 /* FoodpinUITests.swift */; };
 		18DA853E2063C80100E53751 /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA853D2063C80100E53751 /* RestaurantTableViewController.swift */; };
 		18DA85402063D05600E53751 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA853F2063D05600E53751 /* RestaurantTableViewCell.swift */; };
+		18DA8542206888EE00E53751 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA8541206888ED00E53751 /* RestaurantDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		18DA85312063B37F00E53751 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18DA853D2063C80100E53751 /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		18DA853F2063D05600E53751 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		18DA8541206888ED00E53751 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				18DA85132063B37F00E53751 /* Foodpin.xcdatamodeld */,
 				18DA853D2063C80100E53751 /* RestaurantTableViewController.swift */,
 				18DA853F2063D05600E53751 /* RestaurantTableViewCell.swift */,
+				18DA8541206888ED00E53751 /* RestaurantDetailViewController.swift */,
 			);
 			path = Foodpin;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			files = (
 				18DA85402063D05600E53751 /* RestaurantTableViewCell.swift in Sources */,
 				18DA85152063B37F00E53751 /* Foodpin.xcdatamodeld in Sources */,
+				18DA8542206888EE00E53751 /* RestaurantDetailViewController.swift in Sources */,
 				18DA850D2063B37F00E53751 /* AppDelegate.swift in Sources */,
 				18DA853E2063C80100E53751 /* RestaurantTableViewController.swift in Sources */,
 			);

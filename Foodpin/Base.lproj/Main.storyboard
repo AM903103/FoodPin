@@ -74,7 +74,7 @@
                                     <outlet property="nameLabel" destination="ztZ-sA-OUm" id="FnL-og-IpY"/>
                                     <outlet property="thumbnailImageView" destination="40k-pW-GMx" id="BWr-cx-GtS"/>
                                     <outlet property="typeLabel" destination="A9G-D0-3Pc" id="vTs-l8-1wI"/>
-                                    <segue destination="IeU-yQ-ejn" kind="show" trigger="accessoryAction" id="UvA-Y0-Dwn"/>
+                                    <segue destination="KFG-hZ-tQq" kind="show" id="rLR-8z-iLQ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -90,30 +90,30 @@
             <point key="canvasLocation" x="196" y="42.728635682158924"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="ttg-po-HnI">
+        <scene sceneID="y1V-Ld-8EG">
             <objects>
-                <viewController id="IeU-yQ-ejn" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8cT-7v-c2I">
+                <viewController id="KFG-hZ-tQq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OFN-hu-Hdc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5hm-Yb-Ffi">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w8j-I6-GCX">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5hm-Yb-Ffi" firstAttribute="top" secondItem="18h-Gi-aDa" secondAttribute="top" id="DKD-mV-2KC"/>
-                            <constraint firstItem="18h-Gi-aDa" firstAttribute="trailing" secondItem="5hm-Yb-Ffi" secondAttribute="trailing" id="FSX-SV-aUP"/>
-                            <constraint firstItem="18h-Gi-aDa" firstAttribute="bottom" secondItem="5hm-Yb-Ffi" secondAttribute="bottom" id="bNF-jR-EEP"/>
-                            <constraint firstItem="5hm-Yb-Ffi" firstAttribute="leading" secondItem="18h-Gi-aDa" secondAttribute="leading" id="eAT-CM-eNM"/>
+                            <constraint firstItem="zDj-4M-dfc" firstAttribute="trailing" secondItem="w8j-I6-GCX" secondAttribute="trailing" id="2zI-ZT-T7E"/>
+                            <constraint firstItem="w8j-I6-GCX" firstAttribute="leading" secondItem="zDj-4M-dfc" secondAttribute="leading" id="D3C-2w-isB"/>
+                            <constraint firstItem="zDj-4M-dfc" firstAttribute="bottom" secondItem="w8j-I6-GCX" secondAttribute="bottom" id="Z3c-1p-CJZ"/>
+                            <constraint firstItem="w8j-I6-GCX" firstAttribute="top" secondItem="zDj-4M-dfc" secondAttribute="top" id="nE9-MM-CN9"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="18h-Gi-aDa"/>
+                        <viewLayoutGuide key="safeArea" id="zDj-4M-dfc"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CTB-6E-sGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9ra-nX-Nuo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1033" y="43"/>
+            <point key="canvasLocation" x="994" y="36"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SFs-aw-5SH">
