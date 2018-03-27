@@ -17,6 +17,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
+        //指南針
+        mapView.showsCompass = true
+        //比例尺
+        mapView.showsScale = true
+        //交通流量
+        mapView.showsTraffic = true
+        
 
         //將地址轉換為座標後並標註在地圖上
         let geoCoder = CLGeocoder()
@@ -64,6 +71,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         //如果可以的話重複使用此標註
         var annotationView: MKPinAnnotationView? =
                 mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+
+        //改變大頭針顏色
+        annotationView?.pinTintColor = UIColor.orange
 
         if annotationView == nil {
             annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
