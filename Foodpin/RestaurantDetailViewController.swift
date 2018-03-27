@@ -46,12 +46,14 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         return cell
     }
 
-    @objc func showMap(){
+    @objc func showMap() {
         performSegue(withIdentifier: "showMap", sender: self)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+
 
         //偵測手適時要呼叫showMap
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showMap))
@@ -72,6 +74,29 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         //tableview.tableFooterView = UIView(frame: CGRect.zero)
         //變更分隔線顏色
         tableview.separatorColor = UIColor(red: 240 / 255, green: 240 / 255, blue: 240 / 255, alpha: 0.8)
+
+
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(restaurant.location, completionHandler: {
+            placemarks, error in
+            if error != nil {
+                print("err: ")
+                print(error)
+                return
+            }
+
+            if let placemarks = placemarks {
+                let placemark = placemarks[0]
+                let annotation = MKPointAnnotation()
+                if let location = placemark.location {
+                    annotation.coordinate = location.coordinate
+                    self.mapView.addAnnotation(annotation)
+                    let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 250,250)
+                    self.mapView.setRegion(region, animated: false)
+                }
+
+            }
+        })
     }
 
     override func didReceiveMemoryWarning() {
