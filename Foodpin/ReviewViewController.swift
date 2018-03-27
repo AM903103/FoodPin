@@ -12,10 +12,16 @@ class ReviewViewController: UIViewController {
 
     @IBOutlet var backgroundImageView:UIImageView!
     @IBOutlet var containerView: UIView!
+    
+    @IBOutlet var restaurantImageView: UIImageView!
+    var restaurant:Restaurant?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if let restaurant = restaurant {
+            restaurantImageView.image = UIImage(named: restaurant.image)
+        }
+        
         containerView.transform = CGAffineTransform.init(scaleX: 0,y: 0)
 
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
@@ -38,13 +44,12 @@ class ReviewViewController: UIViewController {
     }
 
     /*
-    // MARK: - Navigation
+// MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+}
+*/
 }
