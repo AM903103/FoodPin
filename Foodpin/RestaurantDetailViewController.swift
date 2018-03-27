@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import MapKit
 
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var restaurant: Restaurant!
 
     @IBOutlet weak var restaurantImageView: UIImageView!
-
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var mapView: MKMapView!
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4;
@@ -45,8 +46,17 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         return cell
     }
 
+    @objc func showMap(){
+        performSegue(withIdentifier: "showMap", sender: self)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        //偵測手適時要呼叫showMap
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showMap))
+        mapView.addGestureRecognizer(tapGestureRecognizer)
+
         //啟用自適應Cell
         tableview.estimatedRowHeight = 36
         tableview.rowHeight = UITableViewAutomaticDimension
@@ -59,7 +69,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         //設定表格背景色
         tableview.backgroundColor = UIColor(red: 0 / 255, green: 240 / 255, blue: 240 / 255, alpha: 0.2)
         //移除空白列的分隔線
-        tableview.tableFooterView = UIView(frame: CGRect.zero)
+        //tableview.tableFooterView = UIView(frame: CGRect.zero)
         //變更分隔線顏色
         tableview.separatorColor = UIColor(red: 240 / 255, green: 240 / 255, blue: 240 / 255, alpha: 0.8)
     }
@@ -88,7 +98,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "showReview"){
+        if (segue.identifier == "showReview") {
             let destinationController = segue.destination as! ReviewViewController
             destinationController.restaurant = restaurant
         }

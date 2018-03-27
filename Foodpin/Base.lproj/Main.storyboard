@@ -105,6 +105,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
+                                <mapView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="9O3-0z-WHp">
+                                    <rect key="frame" x="0.0" y="364" width="375" height="155"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </mapView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="36" id="Ysf-vZ-4ku" customClass="RestaurantDetailTableViewCell" customModule="Foodpin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="328" width="375" height="36"/>
@@ -177,13 +181,45 @@
                         <viewLayoutGuide key="safeArea" id="zDj-4M-dfc"/>
                     </view>
                     <connections>
+                        <outlet property="mapView" destination="9O3-0z-WHp" id="c6a-ua-H5I"/>
                         <outlet property="restaurantImageView" destination="s7y-ky-6cf" id="yW9-lc-5zN"/>
                         <outlet property="tableview" destination="8YC-Cn-TMk" id="BoY-Qy-BDJ"/>
+                        <segue destination="DMo-Dq-9sg" kind="show" identifier="showMap" id="fS7-TF-ugH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ra-nX-Nuo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1768.8" y="41.829085457271368"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Wa3-Pr-j8e">
+            <objects>
+                <viewController id="DMo-Dq-9sg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sXF-N1-h3i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="E5X-5J-ZhX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="E5X-5J-ZhX" firstAttribute="top" secondItem="nKc-bP-tMN" secondAttribute="top" id="KUs-Qg-K7q"/>
+                            <constraint firstItem="E5X-5J-ZhX" firstAttribute="top" secondItem="nKc-bP-tMN" secondAttribute="top" id="VY8-bb-GQl"/>
+                            <constraint firstItem="E5X-5J-ZhX" firstAttribute="trailing" secondItem="nKc-bP-tMN" secondAttribute="trailing" id="f32-Ah-cSo"/>
+                            <constraint firstItem="nKc-bP-tMN" firstAttribute="trailing" secondItem="E5X-5J-ZhX" secondAttribute="trailing" id="hi0-Z7-tdx"/>
+                            <constraint firstItem="E5X-5J-ZhX" firstAttribute="leading" secondItem="nKc-bP-tMN" secondAttribute="leading" id="j2u-9q-Y1T"/>
+                            <constraint firstItem="nKc-bP-tMN" firstAttribute="bottom" secondItem="E5X-5J-ZhX" secondAttribute="bottom" id="qyJ-QN-rWa"/>
+                            <constraint firstItem="E5X-5J-ZhX" firstAttribute="leading" secondItem="nKc-bP-tMN" secondAttribute="leading" id="s34-ym-X8c"/>
+                            <constraint firstItem="nKc-bP-tMN" firstAttribute="bottom" secondItem="E5X-5J-ZhX" secondAttribute="bottom" id="vrK-qh-GZJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nKc-bP-tMN"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KUe-BX-eFO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1762" y="738"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="IQn-js-Wu1">

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1885940D206A251800813FF1 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885940C206A251800813FF1 /* ReviewViewController.swift */; };
+		18859410206A40CF00813FF1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1885940F206A40CF00813FF1 /* MapKit.framework */; };
 		18DA850D2063B37F00E53751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA850C2063B37F00E53751 /* AppDelegate.swift */; };
 		18DA85122063B37F00E53751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DA85102063B37F00E53751 /* Main.storyboard */; };
 		18DA85152063B37F00E53751 /* Foodpin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18DA85132063B37F00E53751 /* Foodpin.xcdatamodeld */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		1885940C206A251800813FF1 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		1885940F206A40CF00813FF1 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		18DA85092063B37F00E53751 /* Foodpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18DA850C2063B37F00E53751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18DA85112063B37F00E53751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18859410206A40CF00813FF1 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +89,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1885940E206A40CF00813FF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1885940F206A40CF00813FF1 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		18DA85002063B37F00E53751 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +104,7 @@
 				18DA85232063B37F00E53751 /* FoodpinTests */,
 				18DA852E2063B37F00E53751 /* FoodpinUITests */,
 				18DA850A2063B37F00E53751 /* Products */,
+				1885940E206A40CF00813FF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -212,6 +224,11 @@
 					18DA85082063B37F00E53751 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					18DA851F2063B37F00E53751 = {
 						CreatedOnToolsVersion = 9.2;
