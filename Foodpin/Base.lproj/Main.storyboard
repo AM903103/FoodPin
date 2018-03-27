@@ -215,6 +215,9 @@
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Absolutely love it!"/>
+                                                <connections>
+                                                    <segue destination="lix-YV-eh4" kind="unwind" identifier="great" unwindAction="ratingButtionTappedWithSegue:" id="bFq-Yl-SYW"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIQ-3D-bK4">
                                                 <rect key="frame" x="0.0" y="53.5" width="285" height="32"/>
@@ -222,6 +225,9 @@
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Good"/>
+                                                <connections>
+                                                    <segue destination="lix-YV-eh4" kind="unwind" identifier="good" unwindAction="ratingButtionTappedWithSegue:" id="O9q-dt-aXH"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gn-5P-G4e">
                                                 <rect key="frame" x="0.0" y="90.5" width="285" height="32"/>
@@ -229,6 +235,9 @@
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="I don't like it"/>
+                                                <connections>
+                                                    <segue destination="lix-YV-eh4" kind="unwind" identifier="dislike" unwindAction="ratingButtionTappedWithSegue:" id="RFu-PK-YIA"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
