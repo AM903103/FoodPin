@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1885940D206A251800813FF1 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1885940C206A251800813FF1 /* ReviewViewController.swift */; };
 		18DA850D2063B37F00E53751 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA850C2063B37F00E53751 /* AppDelegate.swift */; };
 		18DA85122063B37F00E53751 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DA85102063B37F00E53751 /* Main.storyboard */; };
 		18DA85152063B37F00E53751 /* Foodpin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18DA85132063B37F00E53751 /* Foodpin.xcdatamodeld */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1885940C206A251800813FF1 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		18DA85092063B37F00E53751 /* Foodpin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodpin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18DA850C2063B37F00E53751 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18DA85112063B37F00E53751 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				18DA8541206888ED00E53751 /* RestaurantDetailViewController.swift */,
 				18DA85432068C22300E53751 /* RestaurantDetailTableViewCell.swift */,
 				18DA85452068CDB700E53751 /* Restaurant.swift */,
+				1885940C206A251800813FF1 /* ReviewViewController.swift */,
 			);
 			path = Foodpin;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				18DA8542206888EE00E53751 /* RestaurantDetailViewController.swift in Sources */,
 				18DA85442068C22400E53751 /* RestaurantDetailTableViewCell.swift in Sources */,
 				18DA850D2063B37F00E53751 /* AppDelegate.swift in Sources */,
+				1885940D206A251800813FF1 /* ReviewViewController.swift in Sources */,
 				18DA853E2063C80100E53751 /* RestaurantTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
