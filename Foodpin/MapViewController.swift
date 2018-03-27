@@ -9,13 +9,14 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
-    var restaurant:Restaurant!
+    var restaurant: Restaurant!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        mapView.delegate = self
 
         //將地址轉換為座標後並標註在地圖上
         let geoCoder = CLGeocoder()
@@ -52,7 +53,29 @@ class MapViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier = "MyPin"
+
+        if annotation.isKind(of: MKUserLocation.self) {
+            return nil
+        }
+
+        //如果可以的話重複使用此標註
+        var annotationView: MKPinAnnotationView? =
+                mapView.dequeueReusableAnnotationView(withIdentifier: identifier) as? MKPinAnnotationView
+
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+        }
+
+        let leftIconView = UIImageView(frame: CGRect.init(x: 0, y: 0, width: 53, height: 53))
+        leftIconView.image = UIImage(named: restaurant.image)
+        annotationView?.leftCalloutAccessoryView = leftIconView
+
+        return annotationView
+    }
 
     /*
     // MARK: - Navigation
