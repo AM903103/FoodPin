@@ -94,7 +94,6 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
                     let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 250,250)
                     self.mapView.setRegion(region, animated: false)
                 }
-
             }
         })
     }
@@ -125,6 +124,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showReview") {
             let destinationController = segue.destination as! ReviewViewController
+            destinationController.restaurant = restaurant
+        }else if (segue.identifier == "showMap") {
+            let destinationController = segue.destination as! MapViewController
             destinationController.restaurant = restaurant
         }
     }
