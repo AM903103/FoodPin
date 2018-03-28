@@ -23,7 +23,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         mapView.showsScale = true
         //交通流量
         mapView.showsTraffic = true
-        
+
 
         //將地址轉換為座標後並標註在地圖上
         let geoCoder = CLGeocoder()
